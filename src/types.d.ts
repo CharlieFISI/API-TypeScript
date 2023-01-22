@@ -1,27 +1,13 @@
-export enum Visibility {
-  Great = 'great',
-  Good = 'good',
-  Ok = 'ok',
-  Poor = 'poor'
-}
-export enum Weather {
-  Sunny = 'sunny',
-  Rainy = 'rainy',
-  Cloudy = 'cloudy',
-  Windy = 'windy',
-  Stormy = 'stormy'
-}
-
-export interface DiaryEntry {
+export interface SubsEntry {
   id: number
-  date: string
-  weather: Weather
-  visibility: Visibility
-  comment: string
+  nick: string
+  months: number
+  profileUrl: string
+  description: string
 }
 
-// export type NonSensivityInfoDiaryEntry = Pick<DiaryEntry, 'id' | 'date' | 'weather' | 'visibility'>
+// export type NonSensivityInfoSubsEntry = Pick<SubsEntry, 'id' | 'date' | 'weather' | 'visibility'>
 
-export type NonSensivityInfoDiaryEntry = Omit<DiaryEntry, 'comment'>
+export type NonSensivityInfoSubsEntry = Omit<SubsEntry, 'id'>
 
-export type NewDiaryEntry = Omit<DiaryEntry, 'id'>
+export type NewSubsEntry = Omit<SubsEntry, 'id'>

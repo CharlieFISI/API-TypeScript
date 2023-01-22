@@ -1,6 +1,6 @@
 import express from 'express'
 
-import diaryRouter from './routes/diaries'
+import subsRouter from './routes/subs'
 
 const app = express()
 app.use(express.json())
@@ -11,6 +11,6 @@ app.get('/ping', (_req, res) => {
   res.send('pong')
 })
 
-app.use('/api/diaries', diaryRouter)
+app.use('/subs', subsRouter)
 
 app.listen(port, () => console.log(`¡Servidor conectado al puerto ${port}!`))
